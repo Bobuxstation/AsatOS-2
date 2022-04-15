@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <script type="text/javascript" src="media.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            font-family: Inter;
+            overflow: hidden;
+        }
+        button {
+            padding: 2px;
+            background-color: lightgrey;
+            width: 25%;
+            border-radius: 5px;
+            height: 75px;
+        }
+input[type='file'] {
+ font-size: 0; 
+padding: 0px;
+}
+::file-selector-button:hover {
+    background-color: #1d1d1d;
+}
+.div {
+    text-align: left;
+    background: #909090;
+    padding: 0;
+    height: 23px;
+}
+#samplevid {
+    margin: auto;
+    width: 75%;
+}
+::file-selector-button { font-size: initial; color: white; background: #909090; border: none; float: right; height: 23px; padding-top: 1.5px; font-family: Inter; text-decoration: underline;}
+.menubutton { font-size: initial; color: white; background: #909090; border: none; height: 23px; border-radius: 0px; float: left; width: 75px; padding: 0; text-decoration: underline;}
+#left {float: left;}
+#right {float: right;}
+.menubutton:hover {
+    background-color: #1d1d1d;
+}
+        </style>
+    </head>
+    <body id="body" style="background-color: white;">
+        <section style="height: 615px; ">
+        <div class="div"><input type="file" accept="video/*" onchange="custom_video(event)">
+            <button  onclick="loadlink()" class="menubutton" style="width: 40px;">Link</button><button  onclick="lookeloo()" class="menubutton">Lookeloo</button></div>
+        <div class="content"><video src="" id="mediavid" controls style="border-radius: 0px 0px 5px 5px; border: black solid 0px; width: 100%; height: 300; background-color: black;"></video>
+<br><br>
+            <h1>Preset video</h1>
+        <div id="samplevid">
+        <button onclick="vid1()" id="left">Morshu RTX Finds Diamond.MP4</button>
+        <button onclick="vid2()" id="right">Sigma.MP3</button>
+        <button onclick="vid3()" id="left">BDP SMP TOUR.MP4</button>
+        <button onclick="vid4()" id="right">Morning Bells - Meme Forest OST.WAV</button>
+        </div>
+    </body>
+</html>
