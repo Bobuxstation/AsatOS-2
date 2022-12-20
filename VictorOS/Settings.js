@@ -20,8 +20,7 @@ function getcolor() {
   a = document.getElementById("color").value;
   document.getElementById("header").style.backgroundColor = a + "99";
 }
-function cssimport() {
-  b = document.getElementById("cssimport").value;
+function cssimport(b) {
   document.getElementById("style").href = b;
 }
 

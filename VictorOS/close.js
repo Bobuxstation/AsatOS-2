@@ -3,7 +3,7 @@ function Closetestwindow() {
   if (x.style.display === "none") {
     document.getElementById("minimizedfiles").style.display = "none";
     x.style.display = "block";
-    var files = document.getElementById("file"); files.src = ("medias/fortinaiti ila babaji.mp4");
+    var files = document.getElementById("file"); files.src = ("fortinaiti ila babaji.mp4");
   } else {
     x.style.display = "none";
     var files = document.getElementById("file"); files.src = ("");
