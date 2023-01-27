@@ -4,6 +4,7 @@
   font-style: normal;
   src: url('Icons/MaterialIcons-Regular.ttf');
 }
+
 /* FONT DECLARATION */
 .material-icons {
   font-family: 'material-icons';
@@ -19,6 +20,7 @@
   direction: ltr;
   -webkit-font-smoothing: antialiased;
 }
+
 /* gtk components style */
 .gtkButton {
   border-radius: 5px;
@@ -38,19 +40,49 @@
   outline: none;
   border: 1px solid #fff;
 }
+
 .appMenu {
-  display: inline-block;
   padding: 35px;
   background-color: #1d1d1dA6;
   display: none;
-  position: relative;
   width: 100%;
   height: 100%;
   padding-left: 100px;
   backdrop-filter: blur(9px);
+  z-index: 1;
+  position: fixed !important;
+  box-sizing: border-box;
+  animation-name: zoomInUp;
+  animation-duration: 0.25s;
+  animation-fill-mode: both;
 }
+
+@keyframes zoomInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  50% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: .2;
+  }
+
+  100% {
+    transform: scale3d(100, 100, 100);
+    opacity: 0;
+  }
+}
+
 .appMenuLauncher {
-  display: inline-block !important;
   text-align: center;
   margin-left: 35px;
   background: none;
@@ -58,17 +90,25 @@
   color: white;
   border: 0px black solid;
 }
+
 .appMenuGTK {
   background: none;
   color: white;
   border: 0px black solid;
 }
+
+.appMenuGTK img:active {
+  animation-name: pulse;
+  animation-duration: 1s;
+}
+
 body {
   font-family: Inter !important;
   background-image: url("bg.jpg");
   background-size: cover;
   overflow: hidden;
 }
+
 Header {
   overflow: hidden;
   width: 100%;
@@ -78,121 +118,140 @@ Header {
   padding: 5px;
   overflow: auto;
   backdrop-filter: blur(9px);
-  z-index:1;
-  position:fixed!important;
+  z-index: 1;
+  position: fixed !important;
 }
+
 .window {
-    height: 0px;
-    width: 0px;
-    display: none;
+  height: 0px;
+  width: 0px;
+  display: none;
 }
+
 .header {
-   width: 590px;
-   height: 30px;
-   background-color: #909090;
-   cursor: move;
-   border-radius: 2px 2px 0px 0px;
-   overflow: auto;
-   padding-left: 5px;
-   padding-right: 5px;
+  width: 590px;
+  height: 30px;
+  background-color: #909090;
+  cursor: move;
+  border-radius: 2px 2px 0px 0px;
+  overflow: auto;
+  padding-left: 5px;
+  padding-right: 5px;
 }
+
 .content {
-   width: 600px;
-   margin: 0;
-   padding: 0;
-   height: 450px;
+  width: 600px;
+  margin: 0;
+  padding: 0;
+  height: 450px;
 }
+
 .headertext {
-    color: white;
-    float: right;
-    background: none;
-    border: black solid 0px;
-    font-family: Inter;
-    font-size: 17.5px;
-    height: 30px;
-    padding-left: 5px;
+  color: white;
+  float: right;
+  background: none;
+  border: black solid 0px;
+  font-family: Inter;
+  font-size: 17.5px;
+  height: 30px;
+  padding-left: 5px;
 }
+
 .closebutton {
-    float: left;
-    background: red;
-    height: 75%;
-    width: 22.5px;
-    border: black solid 0px;
-    font-size: 5px;
-    border-radius: 15px;
-    margin-top: 4px;
-    color: white;
+  float: left;
+  background: red;
+  height: 75%;
+  width: 22.5px;
+  border: black solid 0px;
+  font-size: 5px;
+  border-radius: 15px;
+  margin-top: 4px;
+  color: white;
 }
-.closebutton:hover{
-    background-color: darkred;
-    border: black solid 0px;
-    color: white;
+
+.closebutton:hover {
+  background-color: darkred;
+  border: black solid 0px;
+  color: white;
 }
+
 li {
-    float: left;
-    display: block;
-}
-*{
-    margin: 0;
-    padding: 0;
+  float: left;
+  display: block;
 }
 
-nav{
-display: inline-block;
+* {
+  margin: 0;
+  padding: 0;
 }
+
+nav {
+  display: inline-block;
+}
+
 .sidebar2 {
-    backdrop-filter: blur(9px);
-    width: 100%;
-    position:fixed!important;
-    z-index:1;
-    overflow:auto;
-    padding: 2.5px;
-    background-color: #90909099;
-    display: flex;
-    bottom: 0;
-    justify-content: center;
+  backdrop-filter: blur(9px);
+  width: 100%;
+  position: fixed !important;
+  z-index: 1;
+  padding: 2.5px;
+  background-color: #90909099;
+  display: flex;
+  bottom: 0;
+  justify-content: center;
 }
+
 .menubutton2 {
-    background: none;
-    border: black solid 0px;
-    font-family: Inter;
-    color: black;
-    float: left;
-    text-align: left;
-    font-size: 15px
+  background: none;
+  border: black solid 0px;
+  font-family: Inter;
+  color: black;
+  float: left;
+  text-align: left;
+  font-size: 15px
 }
+
+.menubutton2 img:hover {
+  transform: scale3d(2, 2, 2);
+  transition: all 0.25s ease;
+}
+
 .list {
-    width: 60%;
-    margin: auto;
+  width: 60%;
+  margin: auto;
 }
-  .minimize {
-    float: left;
-    background-color: orange;
-    height: 75%;
-    width: 22.5px;
-    border: black solid 0px;
-    font-size: 20px;
-    color: white;
-    margin-top: 4px;
-    border-radius: 15px;
-    margin-left: 5px;
+
+.minimize {
+  float: left;
+  background-color: orange;
+  height: 75%;
+  width: 22.5px;
+  border: black solid 0px;
+  font-size: 20px;
+  color: white;
+  margin-top: 4px;
+  border-radius: 15px;
+  margin-left: 5px;
 }
-.minimize:hover{
-    background-color: darkorange;
-    border: black solid 0px;
+
+.minimize:hover {
+  background-color: darkorange;
+  border: black solid 0px;
 
 }
-  .menubuttonminimized {
-    background-color: #66666600;
-    border: none;
-    display: none;
-    margin-left: 10px;
-    font-size: 15px;
-    font-family: Inter;
-    height: 100%;
-    color: white;
-    font-weight: bold;
+
+.menubuttonminimized {
+  background-color: #66666600;
+  border: none;
+  display: none;
+  margin-left: 10px;
+  font-size: 15px;
+  font-family: Inter;
+  height: 100%;
+  color: white;
+  font-weight: bold;
 }
+
 .OptionButton {
   overflow: hidden;
   position: fixed;
@@ -202,84 +261,93 @@ display: inline-block;
   color: black;
   float: left;
 }
+
 textarea {
-font-size: 20px;
-font-family: arial;
-padding: 5px;
+  font-size: 20px;
+  font-family: arial;
+  padding: 5px;
 }
+
 header i {
-padding-top: 2px;
+  padding-top: 2px;
 }
+
 textarea {
-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
 }
+
 .logoicon {
-background: none;
-border: black solid 0px;
-float: left;
-display: none;
-font-size: 17.5px;
-color: white;
+  background: none;
+  border: black solid 0px;
+  float: left;
+  display: none;
+  font-size: 17.5px;
+  color: white;
 }
+
 #menu {
-z-index:1;
-position:fixed!important;
-background-color: #90909099;
-backdrop-filter: blur(9px);
-border: black solid 1px;
-border-width: 0px 0px 1px 0px;
-margin-top: 30px;
-padding: 5px;
-border-radius: 5px;
+  z-index: 2;
+  position: fixed !important;
+  background-color: #90909099;
+  backdrop-filter: blur(9px);
+  border: black solid 1px;
+  border-width: 0px 0px 1px 0px;
+  margin-top: 30px;
+  padding: 5px;
+  border-radius: 5px;
 }
-#menu button{
-background: none;
-width: 100%;
-text-align: left;
-border: none;
-color: white;
-font-size: 20px;
-padding: 2px;
-border-radius: 5px;
+
+#menu button {
+  background: none;
+  width: 100%;
+  text-align: left;
+  border: none;
+  color: white;
+  font-size: 20px;
+  padding: 2px;
+  border-radius: 5px;
 }
-#menu button:hover{
-background: lightgrey;
-color: black;
+
+#menu button:hover {
+  background: lightgrey;
+  color: black;
 }
-  .context-menu {
-    position: absolute;
-    text-align: left;
-    background: #90909099;
-    border: 1px solid black;
-    border-radius: 10px;
-    backdrop-filter: blur(9px);
-    padding: 5px;
-  }
 
-  .context-menu ul {
-    padding: 0px;
-    margin: 0px;
-    width: 150px;
-    border-radius: 10px;
-  }
+.context-menu {
+  position: absolute;
+  text-align: left;
+  background: #90909099;
+  border: 1px solid black;
+  border-radius: 10px;
+  backdrop-filter: blur(9px);
+  padding: 5px;
+}
 
-  .context-menu ul li {
-    padding-bottom: 7px;
-    padding-top: 7px;
-    padding: 5px;
-    width: 138px;
-    border-radius: 10px;
-  }
+.context-menu ul {
+  padding: 0px;
+  margin: 0px;
+  width: 150px;
+  border-radius: 10px;
+}
 
-  .context-menu ul li a {
-    text-decoration: none;
-    color: white;
-  }
+.context-menu ul li {
+  padding-bottom: 7px;
+  padding-top: 7px;
+  padding: 5px;
+  width: 138px;
+  border-radius: 10px;
+}
 
-  .context-menu ul li:hover {
-    background: lightgrey;
-    color: black !important;
-  }
+.context-menu ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+.context-menu ul li:hover {
+  background: lightgrey;
+  color: black !important;
+}
+
 .settings button {
-padding: 1px;
+  padding: 1px;
 }
