@@ -12,7 +12,7 @@ function Closetestwindow2() {
   if (x.style.display === "none") {
     document.getElementById("minimizedmeme").style.display = "none";
     x.style.display = "block";
-    var mememaker = document.getElementById("mememaker"); mememaker.src = ("https://zeankundev.github.io/KaOS-Store/apps/MEMEMAKER.html");
+    var mememaker = document.getElementById("mememaker"); mememaker.src = ("https://bobuxstation.github.io/KaOS-Store/apps/MEMEMAKER.html");
   } else {
     x.style.display = "none";
     var mememaker = document.getElementById("mememaker"); mememaker.src = ("");
